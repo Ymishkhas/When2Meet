@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>When2Meet Clone</title>
+</head>
+<body>
+    <header>
+        <h1>When2Meet Clone</h1>
+        <nav>
+            <ul>
+                <li><a href="#createEvt">Create Event</a></li>
+                <li><a href="#availability">Select Availability</a></li>
+                <li><a href="#results">View Results</a></li>
+                <li><a href="#signup">Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2 id="createEvt">Create Event</h2>
+        
+        <form action="http://httpbin.org/post" method="post" id="createEvtForm">
+            <label for="EventName">Event Name: </label>
+            <input name="EventName" type="text" maxlength="30">
+
+            <label for="EventDisc">Event Description: </label>
+            <textarea name="EventDisc" id="EventDisc"></textarea>
+
+            <label for="StartDate">Start Date: </label>
+            <input name="StartDate" type="date">
+
+            <label for="EndDate">End Date: </label>
+            <input name="EndDate" type="date">
+
+            <label for="TimeInc">Time Increment: </label>
+            <select name="TimeInc" id="TimeInc">
+                <option value="15min">15 minutes</option>
+                <option value="15min">20 minutes</option>
+                <option value="15min">30 minutes</option>
+            </select>
+
+            <button type="submit" form="createEvtForm">Create Event</button>
+        </form>
+
+        <h2 id="availability">Input Availability</h2>
+        
+        <form action="http://httpbin.org/post" method="post" id="availabilityForm">
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Time</th>
+                        <th>Sunday</th>
+                        <th>Monday</th>
+                        <th>Tuesday</th>
+                        <th>Wednesday</th>
+                        <th>Thursday</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>9:00 AM</td>
+                        <td><input type="checkbox" name="availableDays" value="sunday"></td>
+                        <td><input type="checkbox" name="availableDays" value="monday"></td>
+                        <td><input type="checkbox" name="availableDays" value="tuesday"></td>
+                        <td><input type="checkbox" name="availableDays" value="wednesday"></td>
+                        <td><input type="checkbox" name="availableDays" value="thursday"></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <button type="submit" form="availabilityForm">Create Event</button>
+        </form>
+
+        <h2 id="results">View Results</h2>
+                    
+        <table>
+            <thead>
+                <tr>
+                    <th>Time</th>
+                    <th>Sunday</th>
+                    <th>Monday</th>
+                    <th>Tuesday</th>
+                    <th>Wednesday</th>
+                    <th>Thursday</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>9:00 AM</td>
+                    <td>3 available</td>
+                    <td>2 available</td>
+                    <td>4 available</td>
+                    <td>1 available</td>
+                    <td>5 available</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>Shareable Link: <a href="">https://when2meet.com/event?id=12345</a></p>
+
+        <h2 id="signup">Sign Up</h2>
+        
+        <form action="http://httpbin.org/post" method="post" id="signupForm">
+            <label for="UserName">Username: </label>
+            <input name="UserName" type="text" minlength="3" maxlength="25" required>
+
+            <label for="Email">Email: </label>
+            <input name="Email" type="email">
+
+            <label for="Password">Password: </label>
+            <input name="Password" type="password" required>
+
+            <button type="submit" form="signupForm">Sign Up</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy 2024 When2Meet Clone. All rights reserverd.</p>
+    </footer>
+</body>
+</html>
