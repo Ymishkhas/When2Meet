@@ -1,0 +1,192 @@
+/* ------------------------------------ */
+/* Navigation bar */
+/* ------------------------------------ */
+header {
+    margin: -8px -8px 8px -8px;
+}
+
+nav{
+    background-color: antiquewhite;
+}
+
+nav ul{
+    margin: 0px;
+    padding: 16px 8px;
+}
+
+nav ul li{
+    display: inline;
+    padding: 16px 8px;
+}
+
+nav ul li:hover{
+    background-color: rgb(250, 225, 194);
+}
+
+nav ul li:last-child{
+    display: inline;
+    float: right;
+    padding: 16px 8px;
+    margin: -16px 0px;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+}
+
+/* Main body */
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0px 32px;
+    gap: 16px;
+}
+
+main #newline {
+    flex-basis: 100%;
+}
+
+/* ------------------------------------ */
+/* Create Event container */
+/* ------------------------------------ */
+.new-event-container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 450px;
+    width: auto;
+    background-color: rgb(255, 251, 245);
+    border-radius: 24px;
+    padding: 16px;
+    border: 1px solid wheat;
+}
+
+.new-event-container:first-child {
+    display: block;
+}
+
+.input-div{
+    display: inline-block;
+}
+
+.new-event-container .input-field, #desc {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: none;
+}
+
+.new-event-container .switch-field {
+	display: flex;
+    justify-content: center;
+    padding: 8px 16px;
+    margin: 0px 0px 0px;
+}
+
+.new-event-container .switch-field input {
+    visibility: hidden;
+    width: 1px;
+    
+}
+
+.new-event-container .switch-field label {
+    color: gray;
+	text-align: center;
+	padding: 8px 16px;
+	border: 1px solid #ccc;
+    background-color: #fff;
+}
+
+.new-event-container .switch-field label:hover {
+	cursor: pointer;
+}
+
+.new-event-container .switch-field input:checked + label {
+	background-color: #fae1c2;
+    color: black;
+}
+
+.new-event-container button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    max-width: 300px;
+    padding: 8px 16px;
+}
+
+/* ------------------------------------ */
+/* SIgnup Container */
+/* ------------------------------------ */
+#sign-up-container {
+    max-width: 400px;
+    background-color: rgb(255, 251, 245);
+    padding: 16px;
+}
+
+#sign-up-container input{ 
+    width: 100%;
+    padding: 8px 8px;
+    margin: 8px 0px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#sign-up-container button{ 
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin: 8px auto;
+    width: 30%;
+    padding: 8px 16px;
+}
+
+/* ------------------------------------ */
+/* Containers */
+/* ------------------------------------ */
+.container {
+    max-width: 100%; 
+    overflow: auto;
+}
+
+.container table {
+    min-width: 375px;
+    border-collapse: collapse;
+    text-align: center;
+    border: 1px solid rgb(160 160 160);
+    margin: 0px 0px 16px;
+}
+
+.container th {
+    padding: 5px 10px;
+    border: 1px solid rgb(160 160 160);
+}
+
+.container tbody td:first-child{
+    border-bottom: 1px solid rgb(160 160 160);
+}
+
+.container td {
+    padding: 5px 10px;
+    border-right: 1px solid rgb(160 160 160);
+}
+
+.container button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+    padding: 8px 16px;
+}
+
+
+footer {
+    text-align: center;
+}

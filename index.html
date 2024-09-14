@@ -16,39 +16,109 @@
                 <li><a href="#signup">Sign Up</a></li>
             </ul>
         </nav>
-        <h1>When2Meet Clone</h1>
     </header>
 
     <main>
-        <h2 id="createEvt">Create Event</h2>
+
+        <div class="new-event-container">
+            <h2 id="createEvt">Create Event</h2>
+            <form action="https://httpbin.org/post" method="post" id="createEvtForm" >
+                <div class="input-div">
+                    <label for="event-name">Event Name</label>
+                    <input class="input-field" name="EventName" type="text" maxlength="30" required>
+                    <label for="event-desc">Event Description (optional)</label>
+                    <textarea class="input-field" name="EventDisc" ></textarea>
+                </div>
+                
+                <div class="input-div">
+                    
+                </div>
+                
+                <div class="input-div">
+                    <label for="start-date">Start Date</label>
+                    <input class="input-field" name="StartDate" type="date" required>
+                </div>
+                
+                <div class="input-div">
+                    <label for="end-date">End Date</label>
+                    <input class="input-field" name="EndDate" type="date" required>
+                </div>
+                    
+                <div class="input-div2">
+                    <label for="TimeInc">Time Increment</label>
+                    <div class="switch-field ">
+                        <input type="radio" name="TimeInc" id="15min" value="15min"> 
+                        <label for="15min">15 minutes</label>
+                        <input type="radio" name="TimeInc" id="20min" value="20min">
+                        <label for="20min">20 minutes</label>
+                        <input type="radio" name="TimeInc" id="30min" value="30min" checked>
+                        <label for="30min">30 minutes</label>
+                    </div>
+                </div>
+                
+                <!-- <select name="TimeInc" id="TimeInc">
+                    <option value="15min">15 minutes</option>
+                    <option value="20min">20 minutes</option>
+                    <option value="30min">30 minutes</option>
+                </select> -->
+
+                <button type="submit" form="createEvtForm">Create Event</button>
+            </form>
+        </div>
+
+        <div id="sign-up-container">
+            <h2 id="signup">Sign Up</h2>
         
-        <form action="https://httpbin.org/post" method="post" id="createEvtForm">
-            <label for="EventName">Event Name: </label>
-            <input name="EventName" type="text" maxlength="30">
+            <form action="https://httpbin.org/post" method="post" id="signupForm">
+                    <label for="UserName">Username: </label>
+                    <input name="UserName" type="text" minlength="3" maxlength="25" required>
+                    
+                    <label for="Email">Email: </label>
+                    <input name="Email" type="email">
+                    
+                    <label for="Password">Password: </label>
+                    <input name="Password" type="password" required>
+                <button type="submit" form="signupForm">Sign Up</button>
+            </form>
+        </div>
 
-            <label for="EventDisc">Event Description: </label>
-            <textarea name="EventDisc" id="EventDisc"></textarea>
-
-            <label for="StartDate">Start Date: </label>
-            <input name="StartDate" type="date">
-
-            <label for="EndDate">End Date: </label>
-            <input name="EndDate" type="date">
-
-            <label for="TimeInc">Time Increment: </label>
-            <select name="TimeInc" id="TimeInc">
-                <option value="15min">15 minutes</option>
-                <option value="15min">20 minutes</option>
-                <option value="15min">30 minutes</option>
-            </select>
-
-            <button type="submit" form="createEvtForm">Create Event</button>
-        </form>
-
-        <h2 id="availability">Input Availability</h2>
         
-        <form action="https://httpbin.org/post" method="post" id="availabilityForm">
-            
+        <div id="newline"></div>
+
+        <div class="container">
+            <h2 id="availability">Input Availability</h2>
+            <form action="https://httpbin.org/post" method="post" id="availabilityForm">
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Time</th>
+                            <th>Sunday</th>
+                            <th>Monday</th>
+                            <th>Tuesday</th>
+                            <th>Wednesday</th>
+                            <th>Thursday</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>9:00 AM</td>
+                            <td><input type="checkbox" name="availableDays" value="sunday"></td>
+                            <td><input type="checkbox" name="availableDays" value="monday"></td>
+                            <td><input type="checkbox" name="availableDays" value="tuesday"></td>
+                            <td><input type="checkbox" name="availableDays" value="wednesday"></td>
+                            <td><input type="checkbox" name="availableDays" value="thursday"></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            <button type="submit" form="availabilityForm">Submit Availability</button>
+            </form>
+        </div>
+        
+        <div class="container">
+            <h2 id="results">View Results</h2>
+                    
             <table>
                 <thead>
                     <tr>
@@ -63,59 +133,18 @@
                 <tbody>
                     <tr>
                         <td>9:00 AM</td>
-                        <td><input type="checkbox" name="availableDays" value="sunday"></td>
-                        <td><input type="checkbox" name="availableDays" value="monday"></td>
-                        <td><input type="checkbox" name="availableDays" value="tuesday"></td>
-                        <td><input type="checkbox" name="availableDays" value="wednesday"></td>
-                        <td><input type="checkbox" name="availableDays" value="thursday"></td>
+                        <td>3 available</td>
+                        <td>2 available</td>
+                        <td>4 available</td>
+                        <td>1 available</td>
+                        <td>5 available</td>
                     </tr>
                 </tbody>
             </table>
+    
+            <p>Shareable Link: <a href="">https://when2meet.com/event?id=12345</a></p>
+        </div>
 
-            <button type="submit" form="availabilityForm">Create Event</button>
-        </form>
-
-        <h2 id="results">View Results</h2>
-                    
-        <table>
-            <thead>
-                <tr>
-                    <th>Time</th>
-                    <th>Sunday</th>
-                    <th>Monday</th>
-                    <th>Tuesday</th>
-                    <th>Wednesday</th>
-                    <th>Thursday</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>9:00 AM</td>
-                    <td>3 available</td>
-                    <td>2 available</td>
-                    <td>4 available</td>
-                    <td>1 available</td>
-                    <td>5 available</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <p>Shareable Link: <a href="">https://when2meet.com/event?id=12345</a></p>
-
-        <h2 id="signup">Sign Up</h2>
-        
-        <form action="https://httpbin.org/post" method="post" id="signupForm">
-            <label for="UserName">Username: </label>
-            <input name="UserName" type="text" minlength="3" maxlength="25" required>
-
-            <label for="Email">Email: </label>
-            <input name="Email" type="email">
-
-            <label for="Password">Password: </label>
-            <input name="Password" type="password" required>
-
-            <button type="submit" form="signupForm">Sign Up</button>
-        </form>
     </main>
 
     <footer>
